@@ -107,11 +107,11 @@ function Hero() {
       */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('https://placehold.co/1600x900/6A8D9F/FFFFFF?text=Serene+Beach+View')" }}
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')" }}
         role="img"
         aria-label="Serene beach view with blue water and sandy shore"
       >
-        <span className="absolute inset-0 bg-black/50"></span>
+        <span className="absolute inset-0 bg-black/35 backdrop-blur-sm"></span>
       </div>
       <div className="relative z-10 p-4">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
@@ -122,7 +122,7 @@ function Hero() {
         </p>
         <a
           href="#gallery"
-          className="mt-8 inline-block bg-white text-emerald-800 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-stone-100 transition-all text-lg"
+          className="mt-8 inline-block bg-emerald-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-emerald-800 transition-all text-lg"
         >
           View Gallery
         </a>
@@ -255,21 +255,21 @@ function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      imageSrc: 'https://placehold.co/350x500/EEEEEE/333333?text=Airbnb+Review+Screenshot+1',
+      imageSrc: '/Images/testimony1.png',
       alt: 'Testimonial screenshot from a happy guest',
       quote: "Absolutely loved our stay! The place was sparkling clean and the host was incredibly welcoming. That view!",
       author: "Guest from Airbnb"
     },
     {
       id: 2,
-      imageSrc: 'https://placehold.co/350x500/EEEEEE/333333?text=Airbnb+Review+Screenshot+2',
+      imageSrc: '/Images/testimony2.png',
       alt: 'Testimonial screenshot from a family',
       quote: "Perfect for our family. So cozy and had all the amenities we needed. We will definitely be back.",
       author: "Guest from Airbnb"
     },
     {
       id: 3,
-      imageSrc: 'https://placehold.co/350x500/EEEEEE/333333?text=Airbnb+Review+Screenshot+3',
+      imageSrc: '/Images/testimony3.png',
       alt: 'Testimonial screenshot highlighting location',
       quote: "The location is unbeatable. So close to everything, yet so quiet and peaceful. Highly recommend.",
       author: "Guest from Airbnb"
