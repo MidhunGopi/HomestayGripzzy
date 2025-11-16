@@ -1,3 +1,68 @@
+Docker & Deployment
+====================
+
+Quick guide to build, run and deploy this Vite React site.
+
+Local Docker build (production image)
+------------------------------------
+
+Build the image locally:
+
+```powershell
+cd 'C:\Users\midhu\Downloads\Gripzzy'
+docker build -t homestaygripzzy:latest .
+```
+
+Run the production container (served by nginx):
+
+```powershell
+docker run --rm -p 8080:80 homestaygripzzy:latest
+# Open http://localhost:8080
+```
+
+Run with docker-compose (dev or prod)
+------------------------------------
+
+Start production service:
+
+```powershell
+docker-compose up --build web
+```
+
+Start dev environment (maps local files, hot reload):
+
+```powershell
+docker-compose up dev
+# open http://localhost:3000
+```
+
+CI / GitHub Actions
+--------------------
+
+A GitHub Actions workflow is included at `.github/workflows/docker-publish.yml`.
+It builds a Docker image and pushes to GitHub Container Registry (`ghcr.io`) under
+your GitHub account. The workflow uses `GITHUB_TOKEN` for GHCR auth. Optionally
+set `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` secrets to push to Docker Hub too.
+
+Kubernetes
+----------
+
+Manifests are included in `k8s/`:
+- `k8s/deployment.yaml` (Deployment) — update the image name to your registry (replace `<OWNER>`).
+- `k8s/service.yaml` (Service)
+
+To deploy to a Kubernetes cluster:
+
+```bash
+# update the image path in k8s/deployment.yaml
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+```
+
+Notes
+-----
+- Make sure `package.json` contains a `build` script (Vite default: `vite build`).
+- For private registries, configure credentials appropriately in your CI/CD pipeline.
 # Deployment Guide
 
 ## Quick Start Deployment
