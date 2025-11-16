@@ -12,13 +12,13 @@ export const GALLERY_IMAGES = [
   },
   {
     id: 2,
-    src: '/Images/bedroom%20two.jpg',
+    src: '/Images/bedroom-two.jpg',
     alt: 'Another angle of the bedroom with soft lighting',
     title: 'Bedroom Angle'
   },
   {
     id: 3,
-    src: '/Images/house%20exterior%20photo.jpg',
+    src: '/Images/house-exterior-photo.jpg',
     alt: 'Exterior view of the homestay property',
     title: 'Exterior View'
   },
@@ -30,13 +30,13 @@ export const GALLERY_IMAGES = [
   },
   {
     id: 5,
-    src: '/Images/bedroom%20two.jpg',
+    src: '/Images/bedroom-two.jpg',
     alt: 'Cozy room details and soft lighting',
     title: 'Room Details'
   },
   {
     id: 6,
-    src: '/Images/house%20exterior%20photo.jpg',
+    src: '/Images/house-exterior-photo.jpg',
     alt: 'Nearby scenery and beach vibes',
     title: 'Nearby Scenery'
   },

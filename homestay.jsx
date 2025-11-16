@@ -214,11 +214,11 @@ function Gallery() {
   // You can add more, remove, or change them by pasting new "Image Address" URLs.
   const images = [
     { src: '/Images/bedroom.jpg', alt: 'View of the comfortable bedroom' },
-    { src: '/Images/bedroom%20two.jpg', alt: 'Second bedroom view' },
-    { src: '/Images/house%20exterior%20photo.jpg', alt: 'Exterior of the property' },
+    { src: '/Images/bedroom-two.jpg', alt: 'Second bedroom view' },
+    { src: '/Images/house-exterior-photo.jpg', alt: 'Exterior of the property' },
     { src: '/Images/bedroom.jpg', alt: 'Room details and soft lighting' },
-    { src: '/Images/bedroom%20two.jpg', alt: 'Another interior angle' },
-    { src: '/Images/house%20exterior%20photo.jpg', alt: 'Nearby scenery and entrance' },
+    { src: '/Images/bedroom-two.jpg', alt: 'Another interior angle' },
+    { src: '/Images/house-exterior-photo.jpg', alt: 'Nearby scenery and entrance' },
   ];
 
   return (

@@ -33,7 +33,7 @@ function Hero() {
         </p>
         <a
           href="#gallery"
-          className="mt-8 inline-block bg-white text-emerald-800 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-stone-100 transition-all text-lg"
+          className="mt-8 inline-block bg-emerald-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-emerald-800 transition-all text-lg"
         >
           View Gallery
         </a>
