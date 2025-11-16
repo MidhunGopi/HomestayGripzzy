@@ -372,12 +372,14 @@ function Contact() {
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-16">
           <div className="flex items-center space-x-3">
-            <Mail size={24} className="text-emerald-200" />
-            {/* --- IMPORTANT ---
-            // Replace with your contact email
-            */}
-            <a href="mailto:your-email@example.com" className="text-lg hover:underline">
-              your-email@example.com
+            <MapPin size={24} className="text-emerald-200" />
+            <a
+              href="https://maps.google.com/maps?hl=en-GB&gl=IN&um=1&ie=UTF-8&fb=1&sa=X&geocode=KTNA0dZovwU7McQfqvgsL1ct&daddr=Gripzy+Serene+Abode,+Puthenthope+PO,+Menamkulam,+Kazhakkoottam,+Thiruvananthapuram,+Kerala+695586&ved=1t:55111&ictx=111"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-lg hover:underline"
+            >
+              View on Google Maps
             </a>
           </div>
           <div className="flex items-center space-x-3">
