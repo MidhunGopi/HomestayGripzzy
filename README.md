@@ -112,7 +112,7 @@ Contact information and booking details.
 Edit `src/config/constants.js`:
 ```javascript
 export const CONTACT_INFO = {
-  ownerName: 'mgx42',,
+  ownerName: 'mgx42',
 };
 ```
 
@@ -176,4 +176,4 @@ Created for Gripzy Serene Abode by Griffith Joseph Ronald.
 
 ---
 
-For questions or updates, contact: your-email@example.com | +91 96330 99347
+For questions or updates, contact: midhugopimg@gmail.com 
