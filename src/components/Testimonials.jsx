@@ -45,7 +45,7 @@ function Testimonials() {
               </span>
 
               {/* Testimonial Screenshot */}
-              <div className="w-full max-w-[300px] bg-white rounded-lg shadow-xl p-2 border border-stone-200">
+              <div className="w-full max-w-[380px] bg-white rounded-lg shadow-xl p-2 border border-stone-200">
                 <img
                   src={currentTestimonial.imageSrc}
                   alt={currentTestimonial.alt}

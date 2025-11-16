@@ -25,7 +25,7 @@ function Contact() {
         </div>
 
         {/* Contact Details */}
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-16">
           {/* Email */}
           <a
             href={`mailto:${CONTACT_INFO.email}`}
@@ -45,7 +45,7 @@ function Contact() {
             <div className="bg-white/20 p-3 rounded-full group-hover:bg-white/30 transition-colors">
               <Phone size={24} className="text-emerald-100" />
             </div>
-            <span className="text-lg">{CONTACT_INFO.phone}</span>
+            <span className="text-lg whitespace-nowrap">{CONTACT_INFO.phone}</span>
           </a>
 
           {/* Location */}

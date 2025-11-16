@@ -315,7 +315,7 @@ function Testimonials() {
                   <span className="font-semibold text-stone-800">{testimonial.author}</span>
                   
                   {/* Testimonial Screenshot */}
-                  <div className="mt-6 w-full max-w-[300px] bg-white rounded-lg shadow-xl p-2 border border-stone-200">
+                  <div className="mt-6 w-full max-w-[380px] bg-white rounded-lg shadow-xl p-2 border border-stone-200">
                     <img
                       src={testimonial.imageSrc}
                       alt={testimonial.alt}
@@ -370,7 +370,7 @@ function Contact() {
           <p className="text-2xl font-semibold text-white mt-2">Griffith Joseph Ronald</p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-12">
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-16">
           <div className="flex items-center space-x-3">
             <Mail size={24} className="text-emerald-200" />
             {/* --- IMPORTANT ---
@@ -386,7 +386,7 @@ function Contact() {
             // This is your contact number
             */}
             <a href="tel:+919633099347" className="text-lg hover:underline">
-              +91 96330 99347
+              <span className="whitespace-nowrap">+91 96330 99347</span>
             </a>
           </div>
           <div className="flex items-center space-x-3">
