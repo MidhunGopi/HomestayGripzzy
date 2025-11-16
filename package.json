@@ -12,7 +12,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .jsx,.js",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && node scripts/copy-images.cjs",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
