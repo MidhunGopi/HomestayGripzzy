@@ -61,7 +61,7 @@ function About() {
         {/* Image */}
         <div className="rounded-xl overflow-hidden shadow-2xl">
           <img 
-            src="https://placehold.co/600x450/AABB99/FFFFFF?text=Cozy+Interior+Shot" 
+            src="/Images/bedroom.jpg" 
             alt="Cozy interior of the homestay" 
             className="w-full h-full object-cover"
             loading="lazy"

@@ -12,31 +12,31 @@ export const GALLERY_IMAGES = [
   },
   {
     id: 2,
-    src: '/Images/one.jpg',
-    alt: 'Comfortable double bed and stylish decor',
-    title: 'Comfort & Style'
+    src: '/Images/bedroom%20two.jpg',
+    alt: 'Another angle of the bedroom with soft lighting',
+    title: 'Bedroom Angle'
   },
   {
     id: 3,
-    src: '/Images/two.jpg',
+    src: '/Images/house%20exterior%20photo.jpg',
     alt: 'Exterior view of the homestay property',
     title: 'Exterior View'
   },
   {
     id: 4,
-    src: '/Images/three.jpg',
+    src: '/Images/bedroom.jpg',
     alt: 'Relaxing common area for guests',
     title: 'Guest Common Area'
   },
   {
     id: 5,
-    src: '/Images/bedroom.jpg',
+    src: '/Images/bedroom%20two.jpg',
     alt: 'Cozy room details and soft lighting',
     title: 'Room Details'
   },
   {
     id: 6,
-    src: '/Images/one.jpg',
+    src: '/Images/house%20exterior%20photo.jpg',
     alt: 'Nearby scenery and beach vibes',
     title: 'Nearby Scenery'
   },

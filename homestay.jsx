@@ -159,11 +159,9 @@ function About() {
           </a>
         </div>
         <div className="rounded-xl overflow-hidden shadow-2xl">
-          {/* --- IMPORTANT ---
-          // I've updated this with an interior shot from your Booking.com link.
-          */}
+          {/* Replaced placeholder with uploaded interior photo */}
           <img 
-            src="https://placehold.co/600x450/AABB99/FFFFFF?text=Cozy+Interior+Shot" 
+            src="/Images/bedroom.jpg" 
             alt="Cozy interior of the homestay" 
             className="w-full h-full object-cover"
             loading="lazy"
@@ -215,12 +213,12 @@ function Gallery() {
   // I've updated these with 6 photos from your Booking.com listing.
   // You can add more, remove, or change them by pasting new "Image Address" URLs.
   const images = [
-    { src: 'https://placehold.co/600x400/99AABB/FFFFFF?text=Neat+Bedroom', alt: 'View of the comfortable bedroom' },
-    { src: 'https://placehold.co/600x400/AABB99/FFFFFF?text=Clean+Bathroom', alt: 'Clean and modern attached bathroom' },
-    { src: 'https://placehold.co/600x400/BBAA99/FFFFFF?text=Work+Desk+Area', alt: 'Work-friendly desk space' },
-    { src: 'https://placehold.co/600x400/99BBAA/FFFFFF?text=Common+Area', alt: 'Shared common area' },
-    { src: 'https://placehold.co/600x400/AA99BB/FFFFFF?text=Kitchenette', alt: 'Kitchenette and sink area' },
-    { src: 'https://placehold.co/600x400/BBAA99/FFFFFF?text=Nearby+Scenery', alt: 'Nearby beach or scenery' },
+    { src: '/Images/bedroom.jpg', alt: 'View of the comfortable bedroom' },
+    { src: '/Images/bedroom%20two.jpg', alt: 'Second bedroom view' },
+    { src: '/Images/house%20exterior%20photo.jpg', alt: 'Exterior of the property' },
+    { src: '/Images/bedroom.jpg', alt: 'Room details and soft lighting' },
+    { src: '/Images/bedroom%20two.jpg', alt: 'Another interior angle' },
+    { src: '/Images/house%20exterior%20photo.jpg', alt: 'Nearby scenery and entrance' },
   ];
 
   return (
