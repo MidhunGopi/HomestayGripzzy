@@ -112,10 +112,7 @@ Contact information and booking details.
 Edit `src/config/constants.js`:
 ```javascript
 export const CONTACT_INFO = {
-  ownerName: 'Your Name',
-  email: 'your-email@example.com',
-  phone: '+91 XXXXXXXXXX',
-  location: 'Your Location',
+  ownerName: 'mgx42',,
 };
 ```
 
