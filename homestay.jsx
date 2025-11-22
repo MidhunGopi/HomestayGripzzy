@@ -29,10 +29,10 @@ function Header() {
   ];
 
   return (
-    <header className="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+    <header className="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
         <div className="flex-shrink-0">
-          <a href="#home" className="text-2xl font-bold text-emerald-800">
+          <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
             Gripzy Serene Abode
           </a>
         </div>
@@ -43,7 +43,7 @@ function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-stone-600 hover:text-emerald-700 transition-colors duration-200 font-medium"
+              className="text-slate-700 hover:text-blue-600 transition-colors duration-200 font-medium"
             >
               {item.name}
             </a>
@@ -55,7 +55,7 @@ function Header() {
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="text-stone-800 hover:text-emerald-700"
+            className="text-slate-800 hover:text-blue-600"
             aria-label="Open menu"
           >
             <Menu size={28} />
@@ -66,13 +66,13 @@ function Header() {
       {/* Mobile Menu Panel */}
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-white z-50 flex flex-col">
-          <div className="flex justify-between items-center p-4 border-b">
-            <span className="text-2xl font-bold text-emerald-800">
+          <div className="flex justify-between items-center p-4 border-b border-slate-100">
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Gripzy Serene Abode
             </span>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-stone-800 hover:text-emerald-700"
+              className="text-slate-800 hover:text-blue-600"
               aria-label="Close menu"
             >
               <X size={28} />
@@ -84,7 +84,7 @@ function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-xl text-stone-700 hover:text-emerald-700 p-2 rounded-md"
+                className="text-xl text-slate-700 hover:text-blue-600 p-2 rounded-md"
               >
                 {item.name}
               </a>
@@ -111,18 +111,18 @@ function Hero() {
         role="img"
         aria-label="Serene beach view with blue water and sandy shore"
       >
-        <span className="absolute inset-0 bg-black/35 backdrop-blur-sm"></span>
+        <span className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-slate-900/30 to-indigo-900/40"></span>
       </div>
       <div className="relative z-10 p-4">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 drop-shadow-2xl">
           Welcome to Gripzy Serene Abode
         </h1>
-        <p className="text-xl md:text-2xl font-light text-stone-200">
+        <p className="text-xl md:text-2xl font-light text-blue-50 drop-shadow-lg">
           Your cozy & peaceful getaway in Puthenthope, Thiruvananthapuram
         </p>
         <a
           href="#gallery"
-          className="mt-8 inline-block bg-emerald-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-emerald-800 transition-all text-lg"
+          className="mt-8 inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold px-8 py-3 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg"
         >
           View Gallery
         </a>
@@ -135,35 +135,36 @@ function Hero() {
 // Describes the homestay
 function About() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-stone-50">
+    <section id="about" className="py-20 md:py-28 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
         <div className="pr-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-emerald-800 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6">
             Experience Puthenthope Like Never Before
           </h2>
-          <p className="text-lg text-stone-700 mb-4">
+          <p className="text-lg text-slate-700 mb-4 leading-relaxed">
             Welcome to Gripzy Serene Abode in Puthenthope, a coastal village 
             near Technopark Kazhakkoottam, Trivandrum. Tucked away in a quiet neighborhood, 
             this individual room on the ground floor is perfect for travelers and professionals alike.
           </p>
-          <p className="text-lg text-stone-700 mb-6">
+          <p className="text-lg text-slate-700 mb-6 leading-relaxed">
             Your host, Griffith Joseph Ronald, resides on the same floor, striking a balance between privacy and shared spaces.
             We are close to major points: Kazhakkoottam (4km), Technopark (5km), 
             Lulu Mall (10km), the beach (1.3km), and the airport (13km).
           </p>
           <a
             href="#contact"
-            className="text-emerald-700 font-semibold text-lg hover:text-emerald-600 transition-colors"
+            className="inline-flex items-center text-blue-600 font-semibold text-lg hover:text-indigo-600 transition-colors group"
           >
-            Get in touch &rarr;
+            Get in touch 
+            <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>
         </div>
-        <div className="rounded-xl overflow-hidden shadow-2xl">
+        <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200 hover:shadow-blue-200 transition-shadow duration-300">
           {/* Replaced placeholder with uploaded interior photo */}
           <img 
             src="/Images/bedroom.jpg" 
             alt="Cozy interior of the homestay" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
         </div>
@@ -188,16 +189,16 @@ function Amenities() {
   return (
     <section id="amenities" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-800 mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-16">
           What We Offer
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
           {amenitiesList.map((item) => (
-            <div key={item.name} className="flex flex-col items-center p-4">
-              <div className="bg-emerald-100 p-5 rounded-full mb-4">
-                <item.icon className="text-emerald-700" size={32} />
+            <div key={item.name} className="flex flex-col items-center p-4 group">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-5 rounded-2xl mb-4 group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
+                <item.icon className="text-blue-600" size={32} />
               </div>
-              <span className="font-medium text-stone-700">{item.name}</span>
+              <span className="font-medium text-slate-700 group-hover:text-blue-600 transition-colors">{item.name}</span>
             </div>
           ))}
         </div>
@@ -222,22 +223,22 @@ function Gallery() {
   ];
 
   return (
-    <section id="gallery" className="py-20 md:py-28 bg-stone-50">
+    <section id="gallery" className="py-20 md:py-28 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-800 mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-16">
           Explore Our Home
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {images.map((img) => (
-            <div key={img.src} className="group rounded-xl overflow-hidden shadow-lg relative">
+            <div key={img.src} className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 relative ring-1 ring-slate-200">
               <img
                 src={img.src}
                 alt={img.alt}
-                className="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <p className="text-white text-lg font-medium">{img.alt}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white text-lg font-medium drop-shadow-lg">{img.alt}</p>
               </div>
             </div>
           ))}
@@ -291,9 +292,9 @@ function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-white">
+    <section id="testimonials" className="py-20 md:py-28 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-800 mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-16">
           What Our Guests Say
         </h2>
         
@@ -306,16 +307,16 @@ function Testimonials() {
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="w-full flex-shrink-0 h-full flex justify-center items-start p-4">
                 <div className="flex flex-col items-center text-center max-w-sm">
-                  <p className="text-lg text-stone-700 italic mb-6">"{testimonial.quote}"</p>
+                  <p className="text-lg text-slate-700 italic mb-6 leading-relaxed">"{testimonial.quote}"</p>
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="text-yellow-500" fill="currentColor" size={20} />
+                      <Star key={i} className="text-amber-400" fill="currentColor" size={20} />
                     ))}
                   </div>
-                  <span className="font-semibold text-stone-800">{testimonial.author}</span>
+                  <span className="font-semibold text-slate-800">{testimonial.author}</span>
                   
                   {/* Testimonial Screenshot */}
-                  <div className="mt-6 w-full max-w-[380px] bg-white rounded-lg shadow-xl p-2 border border-stone-200">
+                  <div className="mt-6 w-full max-w-[380px] bg-white rounded-xl shadow-xl p-2 ring-1 ring-slate-200 hover:shadow-2xl transition-shadow duration-300">
                     <img
                       src={testimonial.imageSrc}
                       alt={testimonial.alt}
@@ -331,14 +332,14 @@ function Testimonials() {
           {/* Slider Controls */}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 -translate-y-1/2 left-2 md:-left-10 bg-white/50 rounded-full p-2 text-stone-700 hover:bg-white transition"
+            className="absolute top-1/2 -translate-y-1/2 left-2 md:-left-10 bg-white/80 backdrop-blur-sm rounded-full p-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={28} />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 -translate-y-1/2 right-2 md:-right-10 bg-white/50 rounded-full p-2 text-stone-700 hover:bg-white transition"
+            className="absolute top-1/2 -translate-y-1/2 right-2 md:-right-10 bg-white/80 backdrop-blur-sm rounded-full p-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
             aria-label="Next testimonial"
           >
             <ChevronRight size={28} />
@@ -353,47 +354,48 @@ function Testimonials() {
 // Shows contact details and a booking link
 function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-28 bg-emerald-700 text-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+    <section id="contact" className="py-20 md:py-28 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))] -z-10"></div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
           Ready for Your Getaway?
         </h2>
-        <p className="text-xl text-emerald-100 mb-12 max-w-2xl mx-auto">
+        <p className="text-xl text-slate-700 mb-12 max-w-2xl mx-auto leading-relaxed">
           We'd love to host you. Send us 
           a message with any questions you might have.
         </p>
         
         {/* Airbnb button container removed */}
         
-        <div className="text-center mb-10">
-          <p className="text-xl text-emerald-100">For direct inquiries, contact the owner:</p>
-          <p className="text-2xl font-semibold text-white mt-2">Griffith Joseph Ronald</p>
+        <div className="text-center mb-10 bg-white rounded-2xl shadow-xl p-8 ring-1 ring-slate-200">
+          <p className="text-xl text-slate-600">For direct inquiries, contact the owner:</p>
+          <p className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mt-2">Griffith Joseph Ronald</p>
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-16">
-          <div className="flex items-center space-x-3">
-            <MapPin size={24} className="text-emerald-200" />
+          <div className="flex items-center space-x-3 bg-white px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <MapPin size={24} className="text-blue-600 group-hover:scale-110 transition-transform" />
             <a
               href="https://maps.google.com/maps?hl=en-GB&gl=IN&um=1&ie=UTF-8&fb=1&sa=X&geocode=KTNA0dZovwU7McQfqvgsL1ct&daddr=Gripzy+Serene+Abode,+Puthenthope+PO,+Menamkulam,+Kazhakkoottam,+Thiruvananthapuram,+Kerala+695586&ved=1t:55111&ictx=111"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg hover:underline"
+              className="text-lg text-slate-700 font-medium group-hover:text-blue-600 transition-colors"
             >
               View on Google Maps
             </a>
           </div>
-          <div className="flex items-center space-x-3">
-            <Phone size={24} className="text-emerald-200" />
+          <div className="flex items-center space-x-3 bg-white px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <Phone size={24} className="text-blue-600 group-hover:scale-110 transition-transform" />
             {/* --- IMPORTANT ---
             // This is your contact number
             */}
-            <a href="tel:+919633099347" className="text-lg hover:underline">
+            <a href="tel:+919633099347" className="text-lg text-slate-700 font-medium group-hover:text-blue-600 transition-colors">
               <span className="whitespace-nowrap">+91 96330 99347</span>
             </a>
           </div>
-          <div className="flex items-center space-x-3">
-            <MapPin size={24} className="text-emerald-200" />
-            <span className="text-lg">Thiruvananthapuram, Kerala</span>
+          <div className="flex items-center space-x-3 bg-white px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <MapPin size={24} className="text-blue-600 group-hover:scale-110 transition-transform" />
+            <span className="text-lg text-slate-700 font-medium">Thiruvananthapuram, Kerala</span>
           </div>
         </div>
       </div>
@@ -404,10 +406,10 @@ function Contact() {
 // --- Footer Component ---
 function Footer() {
   return (
-    <footer className="py-12 bg-stone-800 text-stone-400">
+    <footer className="py-12 bg-gradient-to-br from-slate-900 to-slate-800 text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p>&copy; {new Date().getFullYear()} Gripzy Serene Abode. All rights reserved.</p>
-        <p className="mt-2 text-sm">
+        <p className="mt-2 text-sm text-slate-500">
           Website designed by mgx42
         </p>
       </div>
