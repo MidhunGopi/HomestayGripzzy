@@ -11,15 +11,16 @@ function Header() {
   const { isMenuOpen, openMenu, closeMenu } = useMenu();
 
   return (
-    <header className="bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-600 backdrop-blur-lg shadow-2xl sticky top-0 z-50 border-b border-white/20">
+    <header className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 backdrop-blur-lg shadow-2xl sticky top-0 z-50 border-b border-amber-600/30">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
         {/* Logo */}
-        <div className="flex-shrink-0">
-          <a 
-            href="#home" 
-            className="text-2xl font-extrabold text-white hover:text-amber-300 transition-all duration-300 drop-shadow-lg"
-          >
-            ✨ {SITE_CONFIG.siteName}
+        <div className="flex-shrink-0 flex items-center gap-3">
+          <a href="#home" className="flex items-center gap-3 group">
+            <img 
+              src="/logo/logo-transparent.png" 
+              alt="Gripzy Serene Abode Logo" 
+              className="h-16 w-auto transition-transform duration-300 group-hover:scale-110 drop-shadow-lg"
+            />
           </a>
         </div>
 
@@ -29,7 +30,7 @@ function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-white/90 hover:text-amber-300 transition-all duration-300 font-semibold hover:scale-110 transform"
+              className="text-amber-100 hover:text-amber-400 transition-all duration-300 font-semibold hover:scale-110 transform"
             >
               {item.name}
             </a>
@@ -40,7 +41,7 @@ function Header() {
         <div className="md:hidden">
           <button
             onClick={openMenu}
-            className="text-white hover:text-amber-300 transition-colors"
+            className="text-amber-400 hover:text-amber-300 transition-colors"
             aria-label="Open menu"
           >
             <Menu size={28} />
@@ -50,14 +51,14 @@ function Header() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-gradient-to-br from-teal-700 to-cyan-700 z-50 flex flex-col">
-          <div className="flex justify-between items-center p-4 border-b border-white/20">
-            <span className="text-2xl font-bold text-white">
-              ✨ {SITE_CONFIG.siteName}
+        <div className="md:hidden fixed inset-0 bg-gradient-to-br from-gray-900 to-gray-800 z-50 flex flex-col">
+          <div className="flex justify-between items-center p-4 border-b border-amber-600/30">
+            <span className="text-2xl font-bold text-amber-500">
+              {SITE_CONFIG.siteName}
             </span>
             <button
               onClick={closeMenu}
-              className="text-white hover:text-amber-300 transition-colors"
+              className="text-amber-400 hover:text-amber-300 transition-colors"
               aria-label="Close menu"
             >
               <X size={28} />
@@ -69,7 +70,7 @@ function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={closeMenu}
-                className="text-xl text-white hover:text-amber-300 p-4 rounded-xl hover:bg-white/10 transition-all font-semibold"
+                className="text-xl text-amber-100 hover:text-amber-400 p-4 rounded-xl hover:bg-amber-900/20 transition-all font-semibold"
               >
                 {item.name}
               </a>

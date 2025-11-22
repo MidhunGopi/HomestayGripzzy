@@ -40,9 +40,9 @@ function Gallery() {
   const allImages = [...displayImages, ...displayImages, ...displayImages];
 
   return (
-    <section id="gallery" className="py-20 md:py-28 bg-gradient-to-br from-cyan-50 via-blue-50 to-teal-50 overflow-hidden">
+    <section id="gallery" className="py-20 md:py-28 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-16">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center bg-gradient-to-r from-amber-700 to-amber-600 bg-clip-text text-transparent mb-16">
           📸 Explore Our Home
         </h2>
 
@@ -68,7 +68,7 @@ function Gallery() {
                     />
                   ) : (
                     // Placeholder for default config images
-                    <div className={`w-full h-72 bg-gradient-to-br ${index % 3 === 0 ? 'from-teal-300 to-cyan-400' : index % 3 === 1 ? 'from-cyan-300 to-blue-400' : 'from-blue-300 to-teal-400'} flex items-center justify-center`}>
+                    <div className={`w-full h-72 bg-gradient-to-br ${index % 3 === 0 ? 'from-amber-300 to-yellow-400' : index % 3 === 1 ? 'from-yellow-300 to-orange-400' : 'from-orange-300 to-amber-400'} flex items-center justify-center`}>
                       <div className="text-center">
                         <p className="text-white text-6xl mb-2">📷</p>
                         <p className="text-white text-xl font-bold">{img.title || 'Coming Soon'}</p>
@@ -84,8 +84,8 @@ function Gallery() {
           </div>
           
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-cyan-50 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-cyan-50 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-amber-50 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-amber-50 to-transparent pointer-events-none z-10"></div>
         </div>
 
         <p className="text-center text-gray-600 mt-8 text-sm italic">
