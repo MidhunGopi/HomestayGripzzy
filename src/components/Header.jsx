@@ -11,15 +11,15 @@ function Header() {
   const { isMenuOpen, openMenu, closeMenu } = useMenu();
 
   return (
-    <header className="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-600 backdrop-blur-lg shadow-2xl sticky top-0 z-50 border-b border-white/20">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
         {/* Logo */}
         <div className="flex-shrink-0">
           <a 
             href="#home" 
-            className="text-2xl font-bold text-emerald-800"
+            className="text-2xl font-extrabold text-white hover:text-amber-300 transition-all duration-300 drop-shadow-lg"
           >
-            {SITE_CONFIG.siteName}
+            ✨ {SITE_CONFIG.siteName}
           </a>
         </div>
 
@@ -29,7 +29,7 @@ function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-stone-600 hover:text-emerald-700 transition-colors duration-200 font-medium"
+              className="text-white/90 hover:text-amber-300 transition-all duration-300 font-semibold hover:scale-110 transform"
             >
               {item.name}
             </a>
@@ -40,7 +40,7 @@ function Header() {
         <div className="md:hidden">
           <button
             onClick={openMenu}
-            className="text-stone-800 hover:text-emerald-700"
+            className="text-white hover:text-amber-300 transition-colors"
             aria-label="Open menu"
           >
             <Menu size={28} />
@@ -50,14 +50,14 @@ function Header() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-white z-50 flex flex-col">
-          <div className="flex justify-between items-center p-4 border-b">
-            <span className="text-2xl font-bold text-emerald-800">
-              {SITE_CONFIG.siteName}
+        <div className="md:hidden fixed inset-0 bg-gradient-to-br from-teal-700 to-cyan-700 z-50 flex flex-col">
+          <div className="flex justify-between items-center p-4 border-b border-white/20">
+            <span className="text-2xl font-bold text-white">
+              ✨ {SITE_CONFIG.siteName}
             </span>
             <button
               onClick={closeMenu}
-              className="text-stone-800 hover:text-emerald-700"
+              className="text-white hover:text-amber-300 transition-colors"
               aria-label="Close menu"
             >
               <X size={28} />
@@ -69,7 +69,7 @@ function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={closeMenu}
-                className="text-xl text-stone-700 hover:text-emerald-700 p-2 rounded-md"
+                className="text-xl text-white hover:text-amber-300 p-4 rounded-xl hover:bg-white/10 transition-all font-semibold"
               >
                 {item.name}
               </a>

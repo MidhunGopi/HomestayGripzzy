@@ -32,7 +32,7 @@ function Header() {
     <header className="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
         <div className="flex-shrink-0">
-          <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <a href="#home" className="text-2xl font-bold text-slate-800">
             Gripzy Serene Abode
           </a>
         </div>
@@ -43,7 +43,7 @@ function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-slate-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+              className="text-slate-700 hover:text-slate-900 transition-colors duration-200 font-medium"
             >
               {item.name}
             </a>
@@ -55,7 +55,7 @@ function Header() {
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="text-slate-800 hover:text-blue-600"
+            className="text-slate-800 hover:text-slate-900"
             aria-label="Open menu"
           >
             <Menu size={28} />
@@ -67,12 +67,12 @@ function Header() {
       {isMenuOpen && (
         <div className="md:hidden fixed inset-0 bg-white z-50 flex flex-col">
           <div className="flex justify-between items-center p-4 border-b border-slate-100">
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold text-slate-800">
               Gripzy Serene Abode
             </span>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="text-slate-800 hover:text-blue-600"
+              className="text-slate-800 hover:text-slate-900"
               aria-label="Close menu"
             >
               <X size={28} />
@@ -84,7 +84,7 @@ function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-xl text-slate-700 hover:text-blue-600 p-2 rounded-md"
+                className="text-xl text-slate-700 hover:text-slate-900 p-2 rounded-md"
               >
                 {item.name}
               </a>
@@ -111,7 +111,7 @@ function Hero() {
         role="img"
         aria-label="Serene beach view with blue water and sandy shore"
       >
-        <span className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-slate-900/30 to-indigo-900/40"></span>
+        <span className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-slate-800/40 to-slate-900/50"></span>
       </div>
       <div className="relative z-10 p-4">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 drop-shadow-2xl">
@@ -122,7 +122,7 @@ function Hero() {
         </p>
         <a
           href="#gallery"
-          className="mt-8 inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold px-8 py-3 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg"
+          className="mt-8 inline-block bg-slate-800 hover:bg-slate-900 text-white font-semibold px-8 py-3 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-lg"
         >
           View Gallery
         </a>
@@ -323,14 +323,14 @@ function Testimonials() {
           {/* Slider Controls */}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 -translate-y-1/2 left-2 md:-left-10 bg-white/80 backdrop-blur-sm rounded-full p-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="absolute top-1/2 -translate-y-1/2 left-2 md:-left-10 bg-white/80 backdrop-blur-sm rounded-full p-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900 shadow-lg hover:shadow-xl transition-all duration-300"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={28} />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 -translate-y-1/2 right-2 md:-right-10 bg-white/80 backdrop-blur-sm rounded-full p-2 text-slate-700 hover:bg-blue-50 hover:text-blue-600 shadow-lg hover:shadow-xl transition-all duration-300"
+            className="absolute top-1/2 -translate-y-1/2 right-2 md:-right-10 bg-white/80 backdrop-blur-sm rounded-full p-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900 shadow-lg hover:shadow-xl transition-all duration-300"
             aria-label="Next testimonial"
           >
             <ChevronRight size={28} />

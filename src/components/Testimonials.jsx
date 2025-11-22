@@ -1,67 +1,95 @@
 /**
  * Testimonials Section Component
  * Guest reviews carousel with images
+ * Now displays user-uploaded testimonials from localStorage
  */
 
+import { useState, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TESTIMONIALS } from '../config/testimonials';
 import { useSlider } from '../hooks/useSlider';
 
 function Testimonials() {
-  const { currentIndex, prevSlide, nextSlide } = useSlider(TESTIMONIALS.length);
-  const currentTestimonial = TESTIMONIALS[currentIndex];
+  const [displayTestimonials, setDisplayTestimonials] = useState([]);
+
+  useEffect(() => {
+    // Load custom uploaded testimonials from localStorage
+    const customTestimonials = localStorage.getItem('customTestimonials');
+    
+    if (customTestimonials) {
+      const parsed = JSON.parse(customTestimonials);
+      if (parsed.length > 0) {
+        // Use custom uploaded testimonials
+        setDisplayTestimonials(parsed);
+      } else {
+        // Fall back to default testimonials
+        setDisplayTestimonials(TESTIMONIALS);
+      }
+    } else {
+      // Fall back to default testimonials
+      setDisplayTestimonials(TESTIMONIALS);
+    }
+  }, []);
+
+  const { currentIndex, prevSlide, nextSlide } = useSlider(displayTestimonials.length);
+  const currentTestimonial = displayTestimonials[currentIndex] || TESTIMONIALS[0];
 
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-white">
+    <section id="testimonials" className="py-20 md:py-28 bg-gradient-to-b from-white via-teal-50 to-cyan-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-emerald-800 mb-16">
-          What Our Guests Say
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-16">
+          ⭐ What Our Guests Say
         </h2>
 
         <div className="relative w-full h-[550px]">
           {/* Testimonial Card */}
           <div className="flex h-full justify-center items-start p-4">
-            <div className="flex flex-col items-center text-center max-w-sm">
+            <div className="flex flex-col items-center text-center max-w-sm bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border-4 border-teal-100">
               {/* Quote Text */}
-              <p className="text-lg text-stone-700 italic mb-6">
-                "{currentTestimonial.quote}"
+              <p className="text-xl text-gray-700 italic mb-6 leading-relaxed font-medium">
+                💬 "{currentTestimonial.quote}"
               </p>
 
               {/* Star Rating */}
-              <div className="flex mb-4">
+              <div className="flex mb-4 gap-1">
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
                   <Star 
                     key={i} 
-                    className="text-yellow-500" 
+                    className="text-amber-500 drop-shadow-lg" 
                     fill="currentColor" 
-                    size={20} 
+                    size={24} 
                   />
                 ))}
               </div>
 
               {/* Author */}
-              <span className="font-semibold text-stone-800 mb-6">
+              <span className="font-bold text-2xl bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mb-6">
                 {currentTestimonial.author}
               </span>
 
               {/* Testimonial Screenshot */}
-              <div className="w-full max-w-[380px] bg-white rounded-lg shadow-xl p-2 border border-stone-200">
-                <img
-                  src={currentTestimonial.imageSrc}
-                  alt={currentTestimonial.alt}
-                  className="w-full h-auto rounded-md object-contain"
-                  loading="lazy"
-                />
+              <div className="w-full max-w-[380px] bg-gradient-to-br from-teal-100 to-cyan-100 rounded-2xl shadow-xl p-4 border-2 border-teal-200">
+                {currentTestimonial.image ? (
+                  <img
+                    src={currentTestimonial.image}
+                    alt={`Review by ${currentTestimonial.author}`}
+                    className="w-full h-auto rounded-xl object-contain"
+                  />
+                ) : (
+                  <div className="bg-white rounded-xl p-6 flex items-center justify-center min-h-[200px]">
+                    <p className="text-teal-600 text-lg font-bold">📸 Review Image Coming Soon</p>
+                  </div>
+                )}
               </div>
 
               {/* Slide Indicator */}
-              <div className="flex space-x-2 mt-6">
-                {TESTIMONIALS.map((_, idx) => (
+              <div className="flex space-x-3 mt-6">
+                {displayTestimonials.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => {}}
-                    className={`h-2 w-2 rounded-full transition-colors ${
-                      idx === currentIndex ? 'bg-emerald-700' : 'bg-stone-300'
+                    className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                      idx === currentIndex ? 'bg-gradient-to-r from-teal-500 to-cyan-500 scale-125 shadow-lg' : 'bg-slate-300 hover:bg-slate-400'
                     }`}
                     aria-label={`Go to testimonial ${idx + 1}`}
                   />
@@ -73,17 +101,17 @@ function Testimonials() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute top-1/2 -translate-y-1/2 left-2 md:-left-10 bg-white/50 rounded-full p-2 text-stone-700 hover:bg-white transition"
+            className="absolute top-1/2 -translate-y-1/2 left-2 md:-left-10 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full p-3 hover:scale-110 hover:shadow-2xl transition-all duration-300 border-2 border-white"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={32} />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute top-1/2 -translate-y-1/2 right-2 md:-right-10 bg-white/50 rounded-full p-2 text-stone-700 hover:bg-white transition"
+            className="absolute top-1/2 -translate-y-1/2 right-2 md:-right-10 bg-gradient-to-r from-teal-500 to-cyan-500 text-white rounded-full p-3 hover:scale-110 hover:shadow-2xl transition-all duration-300 border-2 border-white"
             aria-label="Next testimonial"
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={32} />
           </button>
         </div>
       </div>
