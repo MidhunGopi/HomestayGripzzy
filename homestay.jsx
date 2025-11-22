@@ -114,10 +114,10 @@ function Hero() {
         <span className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-slate-900/30 to-indigo-900/40"></span>
       </div>
       <div className="relative z-10 p-4">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 drop-shadow-2xl">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 drop-shadow-2xl">
           Welcome to Gripzy Serene Abode
         </h1>
-        <p className="text-xl md:text-2xl font-light text-blue-50 drop-shadow-lg">
+        <p className="text-xl md:text-2xl font-normal text-white drop-shadow-lg">
           Your cozy & peaceful getaway in Puthenthope, Thiruvananthapuram
         </p>
         <a
@@ -138,35 +138,29 @@ function About() {
     <section id="about" className="py-20 md:py-28 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
         <div className="pr-4">
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-8">
             Experience Puthenthope Like Never Before
           </h2>
-          <p className="text-lg text-slate-700 mb-4 leading-relaxed">
+          <p className="text-lg text-slate-600 mb-5 leading-relaxed">
             Welcome to Gripzy Serene Abode in Puthenthope, a coastal village 
             near Technopark Kazhakkoottam, Trivandrum. Tucked away in a quiet neighborhood, 
             this individual room on the ground floor is perfect for travelers and professionals alike.
           </p>
-          <p className="text-lg text-slate-700 mb-6 leading-relaxed">
+          <p className="text-lg text-slate-600 mb-6 leading-relaxed">
             Your host, Griffith Joseph Ronald, resides on the same floor, striking a balance between privacy and shared spaces.
             We are close to major points: Kazhakkoottam (4km), Technopark (5km), 
             Lulu Mall (10km), the beach (1.3km), and the airport (13km).
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center text-blue-600 font-semibold text-lg hover:text-indigo-600 transition-colors group"
+            className="inline-flex items-center text-slate-800 font-bold text-lg hover:text-slate-900 transition-colors group border-b-2 border-slate-800 hover:border-slate-900"
           >
             Get in touch 
             <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>
         </div>
-        <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200 hover:shadow-blue-200 transition-shadow duration-300">
-          {/* Replaced placeholder with uploaded interior photo */}
-          <img 
-            src="/Images/bedroom.jpg" 
-            alt="Cozy interior of the homestay" 
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-            loading="lazy"
-          />
+        <div className="rounded-2xl overflow-hidden shadow-2xl ring-1 ring-slate-200 bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center h-[400px]">
+          <p className="text-slate-400 text-lg font-medium">Image Coming Soon</p>
         </div>
       </div>
     </section>
@@ -189,16 +183,16 @@ function Amenities() {
   return (
     <section id="amenities" className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-16">
           What We Offer
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
           {amenitiesList.map((item) => (
             <div key={item.name} className="flex flex-col items-center p-4 group">
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-5 rounded-2xl mb-4 group-hover:shadow-lg group-hover:scale-110 transition-all duration-300">
-                <item.icon className="text-blue-600" size={32} />
+              <div className="bg-slate-100 p-5 rounded-2xl mb-4 group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
+                <item.icon className="text-slate-700" size={32} />
               </div>
-              <span className="font-medium text-slate-700 group-hover:text-blue-600 transition-colors">{item.name}</span>
+              <span className="font-semibold text-slate-700 group-hover:text-slate-900 transition-colors">{item.name}</span>
             </div>
           ))}
         </div>
@@ -214,31 +208,26 @@ function Gallery() {
   // I've updated these with 6 photos from your Booking.com listing.
   // You can add more, remove, or change them by pasting new "Image Address" URLs.
   const images = [
-    { src: '/Images/bedroom.jpg', alt: 'View of the comfortable bedroom' },
-    { src: '/Images/bedroom-two.jpg', alt: 'Second bedroom view' },
-    { src: '/Images/house-exterior-photo.jpg', alt: 'Exterior of the property' },
-    { src: '/Images/bedroom.jpg', alt: 'Room details and soft lighting' },
-    { src: '/Images/bedroom-two.jpg', alt: 'Another interior angle' },
-    { src: '/Images/house-exterior-photo.jpg', alt: 'Nearby scenery and entrance' },
+    { src: '', alt: 'Gallery Image 1' },
+    { src: '', alt: 'Gallery Image 2' },
+    { src: '', alt: 'Gallery Image 3' },
+    { src: '', alt: 'Gallery Image 4' },
+    { src: '', alt: 'Gallery Image 5' },
+    { src: '', alt: 'Gallery Image 6' },
   ];
 
   return (
     <section id="gallery" className="py-20 md:py-28 bg-gradient-to-b from-slate-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-16">
           Explore Our Home
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {images.map((img) => (
-            <div key={img.src} className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 relative ring-1 ring-slate-200">
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-72 object-cover transform group-hover:scale-110 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <p className="text-white text-lg font-medium drop-shadow-lg">{img.alt}</p>
+          {images.map((img, index) => (
+            <div key={index} className="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 relative ring-1 ring-slate-200 bg-gradient-to-br from-slate-100 to-slate-200 h-72 flex items-center justify-center">
+              <div className="text-center">
+                <p className="text-slate-400 text-lg font-medium">{img.alt}</p>
+                <p className="text-slate-300 text-sm mt-2">Coming Soon</p>
               </div>
             </div>
           ))}
@@ -256,22 +245,22 @@ function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      imageSrc: '/Images/testimony1.png',
-      alt: 'Testimonial screenshot from a happy guest',
+      imageSrc: '',
+      alt: 'Testimonial 1',
       quote: "Absolutely loved our stay! The place was sparkling clean and the host was incredibly welcoming. That view!",
       author: "Guest from Airbnb"
     },
     {
       id: 2,
-      imageSrc: '/Images/testimony2.png',
-      alt: 'Testimonial screenshot from a family',
+      imageSrc: '',
+      alt: 'Testimonial 2',
       quote: "Perfect for our family. So cozy and had all the amenities we needed. We will definitely be back.",
       author: "Guest from Airbnb"
     },
     {
       id: 3,
-      imageSrc: '/Images/testimony3.png',
-      alt: 'Testimonial screenshot highlighting location',
+      imageSrc: '',
+      alt: 'Testimonial 3',
       quote: "The location is unbeatable. So close to everything, yet so quiet and peaceful. Highly recommend.",
       author: "Guest from Airbnb"
     },
@@ -294,7 +283,7 @@ function Testimonials() {
   return (
     <section id="testimonials" className="py-20 md:py-28 bg-gradient-to-b from-white to-slate-50">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-16">
           What Our Guests Say
         </h2>
         
@@ -315,15 +304,17 @@ function Testimonials() {
                   </div>
                   <span className="font-semibold text-slate-800">{testimonial.author}</span>
                   
-                  {/* Testimonial Screenshot */}
-                  <div className="mt-6 w-full max-w-[380px] bg-white rounded-xl shadow-xl p-2 ring-1 ring-slate-200 hover:shadow-2xl transition-shadow duration-300">
-                    <img
-                      src={testimonial.imageSrc}
-                      alt={testimonial.alt}
-                      className="w-full h-auto rounded-md object-contain"
-                      loading="lazy"
-                    />
-                  </div>
+                  {/* Testimonial Screenshot - Hidden until images added */}
+                  {testimonial.imageSrc && (
+                    <div className="mt-6 w-full max-w-[380px] bg-white rounded-xl shadow-xl p-2 ring-1 ring-slate-200 hover:shadow-2xl transition-shadow duration-300">
+                      <img
+                        src={testimonial.imageSrc}
+                        alt={testimonial.alt}
+                        className="w-full h-auto rounded-md object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -354,10 +345,9 @@ function Testimonials() {
 // Shows contact details and a booking link
 function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-28 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
-      <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))] -z-10"></div>
+    <section id="contact" className="py-20 md:py-28 bg-gradient-to-b from-white to-slate-100 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
           Ready for Your Getaway?
         </h2>
         <p className="text-xl text-slate-700 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -367,35 +357,35 @@ function Contact() {
         
         {/* Airbnb button container removed */}
         
-        <div className="text-center mb-10 bg-white rounded-2xl shadow-xl p-8 ring-1 ring-slate-200">
-          <p className="text-xl text-slate-600">For direct inquiries, contact the owner:</p>
-          <p className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mt-2">Griffith Joseph Ronald</p>
+        <div className="text-center mb-10 bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
+          <p className="text-xl text-slate-600 font-medium">For direct inquiries, contact the owner:</p>
+          <p className="text-2xl font-bold text-slate-800 mt-2">Griffith Joseph Ronald</p>
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-16">
-          <div className="flex items-center space-x-3 bg-white px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-            <MapPin size={24} className="text-blue-600 group-hover:scale-110 transition-transform" />
+          <div className="flex items-center space-x-3 bg-white px-6 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group border border-slate-200">
+            <MapPin size={24} className="text-slate-700 group-hover:scale-110 transition-transform" />
             <a
               href="https://maps.google.com/maps?hl=en-GB&gl=IN&um=1&ie=UTF-8&fb=1&sa=X&geocode=KTNA0dZovwU7McQfqvgsL1ct&daddr=Gripzy+Serene+Abode,+Puthenthope+PO,+Menamkulam,+Kazhakkoottam,+Thiruvananthapuram,+Kerala+695586&ved=1t:55111&ictx=111"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-lg text-slate-700 font-medium group-hover:text-blue-600 transition-colors"
+              className="text-lg text-slate-800 font-semibold group-hover:text-slate-900 transition-colors"
             >
               View on Google Maps
             </a>
           </div>
-          <div className="flex items-center space-x-3 bg-white px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-            <Phone size={24} className="text-blue-600 group-hover:scale-110 transition-transform" />
+          <div className="flex items-center space-x-3 bg-white px-6 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group border border-slate-200">
+            <Phone size={24} className="text-slate-700 group-hover:scale-110 transition-transform" />
             {/* --- IMPORTANT ---
             // This is your contact number
             */}
-            <a href="tel:+919633099347" className="text-lg text-slate-700 font-medium group-hover:text-blue-600 transition-colors">
+            <a href="tel:+919633099347" className="text-lg text-slate-800 font-semibold group-hover:text-slate-900 transition-colors">
               <span className="whitespace-nowrap">+91 96330 99347</span>
             </a>
           </div>
-          <div className="flex items-center space-x-3 bg-white px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
-            <MapPin size={24} className="text-blue-600 group-hover:scale-110 transition-transform" />
-            <span className="text-lg text-slate-700 font-medium">Thiruvananthapuram, Kerala</span>
+          <div className="flex items-center space-x-3 bg-white px-6 py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 group border border-slate-200">
+            <MapPin size={24} className="text-slate-700 group-hover:scale-110 transition-transform" />
+            <span className="text-lg text-slate-800 font-semibold">Thiruvananthapuram, Kerala</span>
           </div>
         </div>
       </div>
