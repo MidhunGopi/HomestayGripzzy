@@ -28,10 +28,15 @@ function AdminPanel() {
     image: ''
   });
 
+  // User role state
+  const [userRole, setUserRole] = useState('');
+
   // Default credentials (stored in localStorage on first run)
   const DEFAULT_CREDENTIALS = {
-    username: 'admin',
-    password: 'gripzzy2024'
+    users: [
+      { username: 'admin', password: 'gripzzy2024', role: 'admin' },
+      { username: 'superadmin', password: 'midzx@2025', role: 'superadmin' }
+    ]
   };
 
   useEffect(() => {
@@ -42,8 +47,10 @@ function AdminPanel() {
     
     // Check if already logged in
     const authStatus = sessionStorage.getItem('isAdminAuthenticated');
+    const savedRole = sessionStorage.getItem('userRole');
     if (authStatus === 'true') {
       setIsAuthenticated(true);
+      setUserRole(savedRole || 'admin');
       loadData();
     }
   }, []);
@@ -66,20 +73,26 @@ function AdminPanel() {
     e.preventDefault();
     const storedCreds = JSON.parse(localStorage.getItem('adminCredentials'));
     
-    if (username === storedCreds.username && password === storedCreds.password) {
+    const user = storedCreds.users.find(u => u.username === username && u.password === password);
+    
+    if (user) {
       setIsAuthenticated(true);
+      setUserRole(user.role);
       sessionStorage.setItem('isAdminAuthenticated', 'true');
+      sessionStorage.setItem('userRole', user.role);
       loadData();
     } else {
-      alert('❌ Invalid credentials! Default: admin / gripzzy2024');
+      alert('❌ Invalid user credentials');
     }
   };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
     sessionStorage.removeItem('isAdminAuthenticated');
+    sessionStorage.removeItem('userRole');
     setUsername('');
     setPassword('');
+    setUserRole('');
   };
 
   const handleImageSelect = (e, type = 'gallery') => {
@@ -202,16 +215,53 @@ function AdminPanel() {
   };
 
   const changePassword = () => {
-    const newPassword = prompt('Enter new password:');
-    if (!newPassword || newPassword.length < 6) {
-      alert('❌ Password must be at least 6 characters!');
-      return;
+    if (userRole === 'superadmin') {
+      // Superadmin can reset admin password without current password
+      const targetUser = prompt('Enter username to reset password (admin or superadmin):');
+      if (!targetUser) return;
+      
+      const newPassword = prompt(`Enter new password for ${targetUser}:`);
+      if (!newPassword || newPassword.length < 6) {
+        alert('❌ Password must be at least 6 characters!');
+        return;
+      }
+      
+      const storedCreds = JSON.parse(localStorage.getItem('adminCredentials'));
+      const userIndex = storedCreds.users.findIndex(u => u.username === targetUser);
+      
+      if (userIndex === -1) {
+        alert('❌ User not found!');
+        return;
+      }
+      
+      storedCreds.users[userIndex].password = newPassword;
+      localStorage.setItem('adminCredentials', JSON.stringify(storedCreds));
+      alert(`✅ Password changed successfully for ${targetUser}!`);
+    } else {
+      // Admin needs current password
+      const currentPassword = prompt('Enter current password:');
+      const storedCreds = JSON.parse(localStorage.getItem('adminCredentials'));
+      const currentUser = storedCreds.users.find(u => u.username === username);
+      
+      if (currentPassword !== currentUser.password) {
+        alert('❌ Current password is incorrect!');
+        return;
+      }
+      
+      const newPassword = prompt('Enter new password:');
+      if (!newPassword || newPassword.length < 6) {
+        alert('❌ Password must be at least 6 characters!');
+        return;
+      }
+      
+      currentUser.password = newPassword;
+      localStorage.setItem('adminCredentials', JSON.stringify(storedCreds));
+      alert('✅ Password changed successfully!');
     }
-    
-    const storedCreds = JSON.parse(localStorage.getItem('adminCredentials'));
-    storedCreds.password = newPassword;
-    localStorage.setItem('adminCredentials', JSON.stringify(storedCreds));
-    alert('✅ Password changed successfully!');
+  };
+
+  const handleForgotPassword = () => {
+    window.location.href = 'mailto:midhungopimg@gmail.com';
   };
 
   // Login Screen
@@ -265,6 +315,13 @@ function AdminPanel() {
               🔓 Login
             </button>
           </form>
+
+          <button
+            onClick={handleForgotPassword}
+            className="w-full mt-4 text-amber-700 hover:text-amber-800 text-sm font-semibold transition-colors"
+          >
+            Forgot Password? Contact Admin
+          </button>
         </div>
       </div>
     );
