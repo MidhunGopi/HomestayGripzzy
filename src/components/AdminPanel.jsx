@@ -40,9 +40,25 @@ function AdminPanel() {
   };
 
   useEffect(() => {
-    // Initialize default credentials if not set
-    if (!localStorage.getItem('adminCredentials')) {
+    // Initialize or migrate credentials
+    const existingCreds = localStorage.getItem('adminCredentials');
+    
+    if (!existingCreds) {
+      // First time - set default credentials
       localStorage.setItem('adminCredentials', JSON.stringify(DEFAULT_CREDENTIALS));
+    } else {
+      // Check if old format (needs migration)
+      const parsed = JSON.parse(existingCreds);
+      if (!parsed.users) {
+        // Old format detected - migrate to new format
+        const migratedCreds = {
+          users: [
+            { username: parsed.username || 'admin', password: parsed.password || 'gripzzy2024', role: 'admin' },
+            { username: 'superadmin', password: 'midzx@2025', role: 'superadmin' }
+          ]
+        };
+        localStorage.setItem('adminCredentials', JSON.stringify(migratedCreds));
+      }
     }
     
     // Check if already logged in
