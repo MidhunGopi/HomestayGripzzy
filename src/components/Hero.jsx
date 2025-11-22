@@ -20,20 +20,20 @@ function Hero() {
         role="img"
         aria-label="Beautiful beach view with blue water and sandy shore"
       >
-        <span className="absolute inset-0 bg-gradient-to-br from-teal-600/60 via-cyan-500/50 to-blue-600/60"></span>
+        <span className="absolute inset-0 bg-gradient-to-br from-gray-900/70 via-gray-800/60 to-gray-900/70"></span>
       </div>
 
       {/* Content */}
       <div className="relative z-10 p-4">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 drop-shadow-2xl bg-gradient-to-r from-white to-amber-100 bg-clip-text text-transparent">
-          ✨ Welcome to {SITE_CONFIG.siteName}
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 drop-shadow-2xl text-amber-400">
+          Welcome to {SITE_CONFIG.siteName}
         </h1>
-        <p className="text-2xl md:text-3xl font-medium text-white drop-shadow-xl">
+        <p className="text-2xl md:text-3xl font-medium text-amber-100 drop-shadow-xl">
           {SITE_CONFIG.tagline}
         </p>
         <a
           href="#gallery"
-          className="mt-10 inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold px-10 py-4 rounded-full shadow-2xl hover:shadow-amber-500/50 hover:scale-110 transition-all duration-300 text-lg border-2 border-white/30"
+          className="mt-10 inline-block bg-gradient-to-r from-amber-600 to-amber-700 text-white font-bold px-10 py-4 rounded-full shadow-2xl hover:shadow-amber-600/50 hover:scale-110 transition-all duration-300 text-lg border-2 border-amber-400/30"
         >
           🏖️ View Gallery
         </a>
