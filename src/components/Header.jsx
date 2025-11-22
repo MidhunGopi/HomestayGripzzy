@@ -12,12 +12,12 @@ function Header() {
 
   return (
     <header className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 backdrop-blur-lg shadow-2xl sticky top-0 z-50 border-b border-amber-600/30">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+      <nav className="w-full px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
         {/* Logo */}
         <div className="flex-shrink-0 flex items-center gap-3">
           <a href="#home" className="flex items-center gap-3 group">
             <img 
-              src="/logo/logo-transparent.png" 
+              src={`${import.meta.env.BASE_URL}logo/logo-transparent.png`}
               alt="Gripzy Serene Abode Logo" 
               className="h-16 w-auto transition-transform duration-300 group-hover:scale-110 drop-shadow-lg"
             />
