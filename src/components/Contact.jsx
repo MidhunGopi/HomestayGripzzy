@@ -3,56 +3,53 @@
  * Contact information and booking details
  */
 
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Instagram, MapPin } from 'lucide-react';
 import { CONTACT_INFO, SITE_CONFIG } from '../config/constants';
 
 function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-28 bg-emerald-700 text-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Ready for Your Getaway?
+    <section id="contact" className="py-20 md:py-28 bg-gradient-to-br from-teal-500 via-cyan-500 to-blue-500 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-20"></div>
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white drop-shadow-2xl">
+          🌟 Ready for Your Getaway?
         </h2>
 
-        <p className="text-xl text-emerald-100 mb-12 max-w-2xl mx-auto">
+        <p className="text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed drop-shadow-lg">
           We'd love to host you. Send us a message with any questions you might have.
         </p>
 
         {/* Owner Info */}
-        <div className="text-center mb-10">
-          <p className="text-xl text-emerald-100">For direct inquiries, contact the owner:</p>
-          <p className="text-2xl font-semibold text-white mt-2">{CONTACT_INFO.ownerName}</p>
+        <div className="text-center mb-10 bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-10 border-4 border-white/50">
+          <p className="text-xl text-teal-700 font-semibold">For direct inquiries, contact the owner:</p>
+          <p className="text-3xl font-extrabold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent mt-2">{CONTACT_INFO.ownerName}</p>
         </div>
 
         {/* Contact Details */}
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-16">
-          {/* Email */}
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
+          {/* Instagram */}
           <a
-            href={`mailto:${CONTACT_INFO.email}`}
-            className="flex items-center space-x-3 hover:text-emerald-200 transition-colors group"
+            href={CONTACT_INFO.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-8 py-5 rounded-2xl shadow-2xl hover:shadow-amber-500/50 hover:scale-110 transition-all duration-300 group border-3 border-white/30 font-bold"
           >
-            <div className="bg-white/20 p-3 rounded-full group-hover:bg-white/30 transition-colors">
-              <Mail size={24} className="text-emerald-100" />
-            </div>
-            <span className="text-lg">{CONTACT_INFO.email}</span>
+            <Instagram size={28} className="group-hover:scale-125 transition-transform" />
+            <span className="text-lg">@griffith_ronald</span>
           </a>
 
           {/* Phone */}
           <a
             href={`tel:${CONTACT_INFO.phone}`}
-            className="flex items-center space-x-3 hover:text-emerald-200 transition-colors group"
+            className="flex items-center space-x-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-8 py-5 rounded-2xl shadow-2xl hover:shadow-amber-500/50 hover:scale-110 transition-all duration-300 group border-3 border-white/30 font-bold"
           >
-            <div className="bg-white/20 p-3 rounded-full group-hover:bg-white/30 transition-colors">
-              <Phone size={24} className="text-emerald-100" />
-            </div>
+            <Phone size={28} className="group-hover:scale-125 transition-transform" />
             <span className="text-lg whitespace-nowrap">{CONTACT_INFO.phone}</span>
           </a>
 
           {/* Location */}
-          <div className="flex items-center space-x-3">
-            <div className="bg-white/20 p-3 rounded-full">
-              <MapPin size={24} className="text-emerald-100" />
-            </div>
+          <div className="flex items-center space-x-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-8 py-5 rounded-2xl shadow-2xl hover:shadow-amber-500/50 hover:scale-110 transition-all duration-300 group border-3 border-white/30 font-bold">
+            <MapPin size={28} className="group-hover:scale-125 transition-transform" />
             <span className="text-lg">{CONTACT_INFO.location}</span>
           </div>
         </div>

@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
 
 export const CONTACT_INFO = {
   ownerName: 'Griffith Joseph Ronald',
-  email: 'your-email@example.com',
+  instagram: 'https://www.instagram.com/griffith_ronald/',
   phone: '+91 96330 99347',
   location: 'Thiruvananthapuram, Kerala',
 };
