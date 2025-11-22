@@ -217,13 +217,13 @@ function AdminPanel() {
   // Login Screen
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-teal-500 via-cyan-500 to-blue-500 flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md border-4 border-white/50">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center p-4">
+        <div className="bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md border-4 border-amber-600/30">
           <div className="text-center mb-8">
-            <div className="inline-block bg-gradient-to-r from-teal-500 to-cyan-500 p-4 rounded-full mb-4">
+            <div className="inline-block bg-gradient-to-r from-amber-600 to-amber-700 p-4 rounded-full mb-4">
               <Lock size={48} className="text-white" />
             </div>
-            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-amber-700 to-amber-600 bg-clip-text text-transparent">
               Admin Panel
             </h1>
             <p className="text-gray-600 mt-2">Homestay Management System</p>
@@ -238,7 +238,7 @@ function AdminPanel() {
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-teal-200 rounded-xl focus:outline-none focus:border-teal-500 transition-colors"
+                className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-600 transition-colors"
                 placeholder="Enter username"
                 required
               />
@@ -252,7 +252,7 @@ function AdminPanel() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-teal-200 rounded-xl focus:outline-none focus:border-teal-500 transition-colors"
+                className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-600 transition-colors"
                 placeholder="Enter password"
                 required
               />
@@ -260,15 +260,11 @@ function AdminPanel() {
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-bold py-3 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white font-bold py-3 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               🔓 Login
             </button>
           </form>
-
-          <p className="text-xs text-gray-500 mt-6 text-center">
-            Default: admin / gripzzy2024
-          </p>
         </div>
       </div>
     );
@@ -276,12 +272,12 @@ function AdminPanel() {
 
   // Admin Dashboard
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-cyan-50 to-blue-50 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 p-4">
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-6">
-        <div className="bg-white rounded-2xl shadow-xl p-6 flex justify-between items-center border-2 border-teal-100">
+        <div className="bg-white rounded-2xl shadow-xl p-6 flex justify-between items-center border-2 border-amber-200">
           <div>
-            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-extrabold bg-gradient-to-r from-amber-700 to-amber-600 bg-clip-text text-transparent">
               ⚙️ Admin Dashboard
             </h1>
             <p className="text-gray-600 mt-1">Manage your homestay content</p>
@@ -289,7 +285,7 @@ function AdminPanel() {
           <div className="flex gap-3">
             <button
               onClick={changePassword}
-              className="px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:scale-105 transition-all"
+              className="px-4 py-2 bg-gradient-to-r from-amber-600 to-amber-700 text-white font-semibold rounded-xl hover:scale-105 transition-all"
             >
               🔑 Change Password
             </button>
@@ -311,7 +307,7 @@ function AdminPanel() {
             onClick={() => setActiveTab('gallery')}
             className={`flex-1 py-3 rounded-xl font-bold transition-all ${
               activeTab === 'gallery'
-                ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg'
+                ? 'bg-gradient-to-r from-amber-600 to-amber-700 text-white shadow-lg'
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
@@ -321,7 +317,7 @@ function AdminPanel() {
             onClick={() => setActiveTab('testimonials')}
             className={`flex-1 py-3 rounded-xl font-bold transition-all ${
               activeTab === 'testimonials'
-                ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg'
+                ? 'bg-gradient-to-r from-amber-600 to-amber-700 text-white shadow-lg'
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
@@ -334,8 +330,8 @@ function AdminPanel() {
       {activeTab === 'gallery' && (
         <div className="max-w-7xl mx-auto">
           {/* Upload Section */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 mb-6 border-2 border-teal-100">
-            <h2 className="text-2xl font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <div className="bg-white rounded-2xl shadow-xl p-6 mb-6 border-2 border-amber-200">
+            <h2 className="text-2xl font-bold text-amber-800 mb-4 flex items-center gap-2">
               <Upload size={24} />
               Upload New Gallery Image
             </h2>
@@ -349,7 +345,7 @@ function AdminPanel() {
                   type="text"
                   value={newImageTitle}
                   onChange={(e) => setNewImageTitle(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-teal-200 rounded-xl focus:outline-none focus:border-teal-500"
+                  className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-600"
                   placeholder="e.g., Bedroom View, Living Room, Garden"
                   required
                 />
@@ -363,14 +359,14 @@ function AdminPanel() {
                   type="file"
                   accept="image/*"
                   onChange={(e) => handleImageSelect(e, 'gallery')}
-                  className="w-full px-4 py-3 border-2 border-teal-200 rounded-xl focus:outline-none focus:border-teal-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-teal-100 file:text-teal-700 file:font-semibold hover:file:bg-teal-200"
+                  className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-amber-100 file:text-amber-800 file:font-semibold hover:file:bg-amber-200"
                   required
                 />
               </div>
 
               {/* Image Preview */}
               {galleryPreview && (
-                <div className="border-2 border-teal-200 rounded-xl p-4">
+                <div className="border-2 border-amber-200 rounded-xl p-4">
                   <p className="text-sm font-semibold text-gray-700 mb-2">Preview:</p>
                   <img 
                     src={galleryPreview} 
@@ -385,7 +381,7 @@ function AdminPanel() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-bold py-4 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white font-bold py-4 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Upload size={20} />
                 Upload Image
@@ -394,8 +390,8 @@ function AdminPanel() {
           </div>
 
           {/* Gallery Grid */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-teal-100">
-            <h2 className="text-2xl font-bold text-teal-700 mb-4">
+          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-amber-200">
+            <h2 className="text-2xl font-bold text-amber-800 mb-4">
               Current Gallery Images
             </h2>
             
@@ -407,7 +403,7 @@ function AdminPanel() {
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {galleryImages.map((img) => (
-                  <div key={img.id} className="relative group rounded-xl overflow-hidden shadow-lg border-2 border-teal-100">
+                  <div key={img.id} className="relative group rounded-xl overflow-hidden shadow-lg border-2 border-amber-200">
                     <img
                       src={img.src}
                       alt={img.alt}
@@ -439,8 +435,8 @@ function AdminPanel() {
       {activeTab === 'testimonials' && (
         <div className="max-w-7xl mx-auto">
           {/* Upload Section */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 mb-6 border-2 border-teal-100">
-            <h2 className="text-2xl font-bold text-teal-700 mb-4 flex items-center gap-2">
+          <div className="bg-white rounded-2xl shadow-xl p-6 mb-6 border-2 border-amber-200">
+            <h2 className="text-2xl font-bold text-amber-800 mb-4 flex items-center gap-2">
               <Star size={24} />
               Add New Testimonial
             </h2>
@@ -454,7 +450,7 @@ function AdminPanel() {
                   type="text"
                   value={newTestimonial.author}
                   onChange={(e) => setNewTestimonial(prev => ({ ...prev, author: e.target.value }))}
-                  className="w-full px-4 py-3 border-2 border-teal-200 rounded-xl focus:outline-none focus:border-teal-500"
+                  className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-600"
                   placeholder="e.g., John Doe"
                   required
                 />
@@ -467,7 +463,7 @@ function AdminPanel() {
                 <textarea
                   value={newTestimonial.quote}
                   onChange={(e) => setNewTestimonial(prev => ({ ...prev, quote: e.target.value }))}
-                  className="w-full px-4 py-3 border-2 border-teal-200 rounded-xl focus:outline-none focus:border-teal-500"
+                  className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-600"
                   placeholder="Guest's review..."
                   rows="4"
                   required
@@ -481,7 +477,7 @@ function AdminPanel() {
                 <select
                   value={newTestimonial.rating}
                   onChange={(e) => setNewTestimonial(prev => ({ ...prev, rating: parseInt(e.target.value) }))}
-                  className="w-full px-4 py-3 border-2 border-teal-200 rounded-xl focus:outline-none focus:border-teal-500"
+                  className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-600"
                 >
                   <option value="5">⭐⭐⭐⭐⭐ (5 stars)</option>
                   <option value="4">⭐⭐⭐⭐ (4 stars)</option>
@@ -499,10 +495,10 @@ function AdminPanel() {
                   type="file"
                   accept="image/*"
                   onChange={(e) => handleImageSelect(e, 'testimonial')}
-                  className="w-full px-4 py-3 border-2 border-teal-200 rounded-xl focus:outline-none focus:border-teal-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-teal-100 file:text-teal-700 file:font-semibold hover:file:bg-teal-200"
+                  className="w-full px-4 py-3 border-2 border-amber-200 rounded-xl focus:outline-none focus:border-amber-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-amber-100 file:text-amber-800 file:font-semibold hover:file:bg-amber-200"
                 />
                 {newTestimonial.image && (
-                  <div className="mt-3 border-2 border-teal-200 rounded-lg p-2">
+                  <div className="mt-3 border-2 border-amber-200 rounded-lg p-2">
                     <p className="text-xs text-gray-600 mb-2">Preview:</p>
                     <img src={newTestimonial.image} alt="Preview" className="w-full max-w-xs h-48 object-cover rounded-lg mx-auto" />
                   </div>
@@ -511,7 +507,7 @@ function AdminPanel() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white font-bold py-3 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+                className="w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white font-bold py-3 rounded-xl hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Save size={20} />
                 Add Testimonial
@@ -520,8 +516,8 @@ function AdminPanel() {
           </div>
 
           {/* Testimonials List */}
-          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-teal-100">
-            <h2 className="text-2xl font-bold text-teal-700 mb-4">
+          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-amber-200">
+            <h2 className="text-2xl font-bold text-amber-800 mb-4">
               Current Testimonials
             </h2>
             
@@ -533,7 +529,7 @@ function AdminPanel() {
             ) : (
               <div className="space-y-4">
                 {testimonials.map((testimonial) => (
-                  <div key={testimonial.id} className="border-2 border-teal-100 rounded-xl p-4 hover:shadow-lg transition-shadow">
+                  <div key={testimonial.id} className="border-2 border-amber-200 rounded-xl p-4 hover:shadow-lg transition-shadow">
                     <div className="flex justify-between items-start mb-3">
                       <div>
                         <p className="font-bold text-lg text-gray-800">{testimonial.author}</p>
@@ -554,7 +550,7 @@ function AdminPanel() {
                     <p className="text-gray-700 italic mb-3">"{testimonial.quote}"</p>
                     
                     {testimonial.image && (
-                      <img src={testimonial.image} alt="Review" className="w-full max-w-md h-auto rounded-lg border-2 border-teal-100" />
+                      <img src={testimonial.image} alt="Review" className="w-full max-w-md h-auto rounded-lg border-2 border-amber-200" />
                     )}
                     
                     <p className="text-xs text-gray-500 mt-2">
