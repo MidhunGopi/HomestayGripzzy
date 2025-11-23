@@ -5,8 +5,8 @@
 
 export const SITE_CONFIG = {
   siteName: 'Gripzy Serene Abode',
-  tagline: 'Your cozy & peaceful getaway in Puthenthope, Thiruvananthapuram',
-  description: 'A comfortable homestay in Puthenthope, Kerala - close to Technopark, Lulu Mall, and the beach.',
+  tagline: 'Your cozy & peaceful getaway in Thiruvananthapuram',
+  description: 'A comfortable homestay in Kerala - close to Technopark, Lulu Mall, and the beach.',
 };
 
 export const CONTACT_INFO = {

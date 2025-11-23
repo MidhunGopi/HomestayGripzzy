@@ -13,20 +13,36 @@ function Amenities() {
           ⭐ What We Offer
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 text-center">
-          {AMENITIES.map((item) => (
-            <div 
-              key={item.id} 
-              className="flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 hover:from-amber-200 hover:to-yellow-200 transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer border-2 border-amber-200"
-              title={item.description}
-            >
-              <div className="bg-gradient-to-br from-amber-600 to-amber-700 p-5 rounded-full mb-4 shadow-lg">
-                <item.icon className="text-white" size={32} />
+        <div className="relative overflow-hidden">
+          <div className="flex gap-8 animate-scroll">
+            {AMENITIES.map((item) => (
+              <div 
+                key={item.id} 
+                className="flex-shrink-0 w-64 flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 hover:from-amber-200 hover:to-yellow-200 transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer border-2 border-amber-200"
+                title={item.description}
+              >
+                <div className="bg-gradient-to-br from-amber-600 to-amber-700 p-5 rounded-full mb-4 shadow-lg">
+                  <item.icon className="text-white" size={32} />
+                </div>
+                <span className="font-bold text-amber-900">{item.name}</span>
+                <p className="text-xs text-amber-700 mt-2">{item.description}</p>
               </div>
-              <span className="font-bold text-amber-900">{item.name}</span>
-              <p className="text-xs text-amber-700 mt-2">{item.description}</p>
-            </div>
-          ))}
+            ))}
+            {/* Duplicate for seamless loop */}
+            {AMENITIES.map((item) => (
+              <div 
+                key={`${item.id}-duplicate`} 
+                className="flex-shrink-0 w-64 flex flex-col items-center p-6 rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-100 hover:from-amber-200 hover:to-yellow-200 transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer border-2 border-amber-200"
+                title={item.description}
+              >
+                <div className="bg-gradient-to-br from-amber-600 to-amber-700 p-5 rounded-full mb-4 shadow-lg">
+                  <item.icon className="text-white" size={32} />
+                </div>
+                <span className="font-bold text-amber-900">{item.name}</span>
+                <p className="text-xs text-amber-700 mt-2">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

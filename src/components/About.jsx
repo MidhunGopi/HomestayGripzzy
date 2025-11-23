@@ -16,21 +16,21 @@ function About() {
         {/* Main Content Card */}
         <div className="bg-white/80 backdrop-blur-lg p-8 md:p-12 rounded-3xl shadow-2xl border-2 border-amber-200">
           <h2 className="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-amber-700 to-amber-600 bg-clip-text text-transparent mb-8 text-center">
-            🏝️ Experience Puthenthope Like Never Before
+            🏝️ Experience Trivandrum Like Never Before
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             {/* Left Column - Description */}
             <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Welcome to <span className="font-bold text-amber-700">{SITE_CONFIG.siteName}</span> in Puthenthope, a coastal village 
-                near Technopark Kazhakkoottam, Trivandrum. Tucked away in a quiet neighborhood, 
-                this individual room on the ground floor is perfect for travelers and professionals alike.
-              </p>
-
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Your host, <span className="font-bold text-amber-700">Griffith Joseph Ronald</span>, resides on the same floor, 
-                striking a balance between privacy and shared spaces.
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Welcome to <span className="font-bold text-amber-700">{SITE_CONFIG.siteName}</span> in Trivandrum, a coastal village 
+            near Technopark Kazhakkoottam. We offer multiple accommodation options to suit your needs - comfortable rooms 
+            on the ground floor, spacious rooms upstairs, and even a separate 1BHK house nearby for 
+            complete privacy. <span className="font-bold text-amber-700">Licensed by Kerala Tourism Department.</span>
+          </p>              <p className="text-lg text-gray-700 leading-relaxed">
+                Your host, <span className="font-bold text-amber-700">Griffith Joseph Ronald</span>, is an 
+                <span className="font-bold text-amber-700"> Airbnb Superhost with 5-star reviews</span>, ensuring a welcoming stay 
+                whether you prefer shared spaces or complete independence. Perfect for travelers, professionals, and families alike.
               </p>
 
               <div className="bg-gradient-to-r from-amber-600 to-amber-700 p-6 rounded-2xl text-white shadow-xl">

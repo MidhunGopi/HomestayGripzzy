@@ -9,7 +9,9 @@ import {
   ParkingCircle, 
   Wind, 
   Waves,
-  Lock 
+  Lock,
+  Luggage,
+  Car
 } from 'lucide-react';
 
 export const AMENITIES = [
@@ -48,5 +50,17 @@ export const AMENITIES = [
     icon: Lock, 
     name: 'Lock on Bedroom Door',
     description: 'Private and secure sleeping quarters'
+  },
+  { 
+    id: 'luggage',
+    icon: Luggage, 
+    name: 'Luggage Drop-off Allowed',
+    description: 'Store your luggage safely before check-in or after check-out'
+  },
+  { 
+    id: 'rental',
+    icon: Car, 
+    name: 'Car & Scooter Rental',
+    description: 'Daily rental available (optional)'
   },
 ];
