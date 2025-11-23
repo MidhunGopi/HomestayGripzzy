@@ -42,9 +42,9 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Amenities />
         <Gallery />
+        <Amenities />
+        <About />
         <Testimonials />
         <Contact />
       </main>
