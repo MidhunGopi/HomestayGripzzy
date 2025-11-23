@@ -11,7 +11,7 @@ export const SITE_CONFIG = {
 
 export const CONTACT_INFO = {
   ownerName: 'Griffith Joseph Ronald',
-  instagram: 'https://www.instagram.com/griffith_ronald/',
+  instagram: 'https://www.instagram.com/gripzystays?utm_source=qr&igsh=MXR5aWZnZGRtY3BhNg%3D%3D',
   email: 'gripzysereneabode@gmail.com',
   phone: '+91 9633099347',
   location: 'Puthenthope PO, Kazhakkoottam, Thiruvananthapuram, Kerala 695586',

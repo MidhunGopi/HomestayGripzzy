@@ -20,9 +20,8 @@ function Contact() {
         </p>
 
         {/* Owner Info */}
-        <div className="text-center mb-10 bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-10 border-4 border-amber-600/50">
-          <p className="text-xl text-amber-800 font-semibold">For direct inquiries, contact the owner:</p>
-          <p className="text-3xl font-extrabold bg-gradient-to-r from-amber-700 to-amber-600 bg-clip-text text-transparent mt-2">{CONTACT_INFO.ownerName}</p>
+        <div className="text-center mb-10 bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border-4 border-amber-600/50">
+          <p className="text-2xl text-amber-800 font-semibold">For direct inquiries, Contact Us</p>
         </div>
 
         {/* Contact Details */}
@@ -35,7 +34,7 @@ function Contact() {
             className="flex items-center space-x-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-8 py-5 rounded-2xl shadow-2xl hover:shadow-amber-500/50 hover:scale-110 transition-all duration-300 group border-3 border-white/30 font-bold"
           >
             <Instagram size={28} className="group-hover:scale-125 transition-transform" />
-            <span className="text-lg">@griffith_ronald</span>
+            <span className="text-lg">@gripzystays</span>
           </a>
 
           {/* Email */}

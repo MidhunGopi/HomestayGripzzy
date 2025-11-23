@@ -28,9 +28,10 @@ function About() {
             on the ground floor, spacious rooms upstairs, and even a separate 1BHK house nearby for 
             complete privacy. <span className="font-bold text-amber-700">Licensed by Kerala Tourism Department.</span>
           </p>              <p className="text-lg text-gray-700 leading-relaxed">
-                Your host, <span className="font-bold text-amber-700">Griffith Joseph Ronald</span>, is an 
-                <span className="font-bold text-amber-700"> Airbnb Superhost with 5-star reviews</span>, ensuring a welcoming stay 
-                whether you prefer shared spaces or complete independence. Perfect for travelers, professionals, and families alike.
+                At <span className="font-bold text-amber-700">{SITE_CONFIG.siteName}</span>, we believe every guest deserves 
+                a stay that feels just like home. Our space is thoughtfully created with warmth, care, and personal touches 
+                that make your experience truly comfortable. Whether you're here to relax, explore, or work, we ensure a 
+                cozy, homely atmosphere where you feel welcomed and at ease.
               </p>
 
               <div className="bg-gradient-to-r from-amber-600 to-amber-700 p-6 rounded-2xl text-white shadow-xl">
